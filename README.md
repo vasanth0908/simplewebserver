@@ -1,27 +1,25 @@
-# EX01 Developing a Simple Webserver
-## Date:
-
+# Developing a Simple Webserver
 ## AIM:
 To develop a simple webserver to serve html pages.
 
 ## DESIGN STEPS:
 ### Step 1: 
-HTML content creation.
-
+HTML content creation
 ### Step 2:
-Design of webserver workflow.
-
+Design of webserver workflow
 ### Step 3:
-Implementation using Python code.
-
+Implementation using Python code
 ### Step 4:
 Serving the HTML pages.
-
 ### Step 5:
-Testing the webserver.
+Testing the webserver
 
 ## PROGRAM:
 ```
+To develop a simple webserver to serve html pages.
+Developed by: Divya Sampath
+RegisterNumber:  212221040042
+
 from http.server import HTTPServer, BaseHTTPRequestHandler
 content = """
 <!DOCTYPE html>
@@ -30,47 +28,32 @@ content = """
 <title>My webserver</title>
 </head>
 <body>
-<h1>Top 5 Revenue Generating Companies<h1>
-<UL TYPE=“circle”>
-<LI> Walmart </LI>		
-<LI> Saudi Aramco </LI>
-<LI> State Grid Corporation of China </LI>
-<LI> Amazon.com, Inc </LI>
-<LI> Vitol </LI>
-</UL>
+<h1>Top five Revenue generating Software Companies.</h1>
+    <ol>
+        <li>Apple</li>
+        <li>Microsoft</li>
+        <li>Alphabet</li>
+        <li>Amazon</li>
+        <li>Tesla</li>
+    </ol>
 </body>
 </html>
-
 """
-
 class myhandler(BaseHTTPRequestHandler):
-
     def do_GET(self):
-
         print("request received")
-
         self.send_response(200)
-
         self.send_header('content-type', 'text/html; charset=utf-8')
-
         self.end_headers()
-
         self.wfile.write(content.encode())
-
-server_address = ('',8000)
-
+server_address = ('',8001)
 httpd = HTTPServer(server_address,myhandler)
-
 print("my webserver is running...")
-
 httpd.serve_forever()
+
 ```
-
 ## OUTPUT:
-![Screenshot 2023-10-05 092212](https://github.com/selvasachein/simplewebserver/assets/113017853/1bd0924b-d2d5-4be5-9811-eeab750440ea)
-
-
-![Screenshot 2023-10-05 091226](https://github.com/selvasachein/simplewebserver/assets/113017853/0ef112a5-3be9-4467-9d92-af2ad319e098)
+![image](https://github.com/vasanth0908/simplewebserver/assets/121245222/87162c73-3771-41d1-b9c3-58327265ede1)
 
 ## RESULT:
 The program for implementing simple webserver is executed successfully.
