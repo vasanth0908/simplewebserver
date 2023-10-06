@@ -17,8 +17,8 @@ Testing the webserver
 ## PROGRAM:
 ```
 To develop a simple webserver to serve html pages.
-Developed by: Divya Sampath
-RegisterNumber:  212221040042
+Developed by: Vasanth s
+RegisterNumber:  212222110052
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
 content = """
@@ -28,14 +28,17 @@ content = """
 <title>My webserver</title>
 </head>
 <body>
-<h1>Top five Revenue generating Software Companies.</h1>
-    <ol>
-        <li>Apple</li>
-        <li>Microsoft</li>
-        <li>Alphabet</li>
-        <li>Amazon</li>
-        <li>Tesla</li>
-    </ol>
+<h2 align="center">Top 5 revenue companies </h2>
+<hr>
+<ol>
+<h3>
+<li>apple</li>
+<li>amazon</li>
+<li>Microsoft</li>
+<li>alphabet</li>
+<li>meta</li>
+</h3>
+</ol>
 </body>
 </html>
 """
@@ -46,14 +49,16 @@ class myhandler(BaseHTTPRequestHandler):
         self.send_header('content-type', 'text/html; charset=utf-8')
         self.end_headers()
         self.wfile.write(content.encode())
-server_address = ('',8001)
+server_address = ('',8000)
 httpd = HTTPServer(server_address,myhandler)
 print("my webserver is running...")
 httpd.serve_forever()
 
 ```
 ## OUTPUT:
-![image](https://github.com/vasanth0908/simplewebserver/assets/121245222/87162c73-3771-41d1-b9c3-58327265ede1)
+![1](https://github.com/vasanth0908/simplewebserver/assets/122000018/cee8ea76-c5a0-45d1-9b1c-39c79f2c82aa)
+![2](https://github.com/vasanth0908/simplewebserver/assets/122000018/39b84fc8-9bec-4047-8a01-d2f8bb02d96e)
+
 
 ## RESULT:
 The program for implementing simple webserver is executed successfully.
